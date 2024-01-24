@@ -12,6 +12,12 @@ class Handler implements URLHandler {
             String[] parameters = url.getQuery().split("&");
             String[] messages = parameters[0].split("=");
             String[] usernames = parameters[1].split("=");
+            if (usernames.length == 1) {
+                return "No User Provided";
+            }
+            if (messages.length == 1) {
+                return "No Message Provided";
+            }
             if (messages[0].equals("s") && usernames[0].equals("user")) {
                 listOfMessages += usernames[1] + ": " + messages[1] + "\n";
             }
