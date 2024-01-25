@@ -8,7 +8,10 @@ class Handler implements URLHandler {
     String listOfMessages = "";
 
     public String handleRequest(URI url) {
-        if (url.getPath().contains("/add-message")) {
+        if (url.getPath().equals("/")) {
+            return listOfMessages;
+        }
+        if (url.getPath().equals("/add-message")) {
             String[] parameters = url.getQuery().split("&");
             String[] messages = parameters[0].split("=");
             String[] usernames = parameters[1].split("=");
