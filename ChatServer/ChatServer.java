@@ -1,10 +1,7 @@
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
 
 class Handler implements URLHandler {
-    ArrayList<String> userList = new ArrayList<>();
-    ArrayList<String> messageList = new ArrayList<>();
     String listOfMessages = "";
 
     public String handleRequest(URI url) {
